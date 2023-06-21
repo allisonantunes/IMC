@@ -4,10 +4,10 @@ export const Modal = {
     message: document.querySelector('.modal .title span'),
     ButtonClose: document.querySelector('.modal button.close'),
 
-    open() { // faz a mesma coisa
+    open() {
         this.wrapper.classList.add('open')
     },
-    close: function() { // que isso, escrito de forma diferente
+    close() {
         Modal.wrapper.classList.remove('open')
     }
 }

@@ -6,10 +6,6 @@ const form = document.querySelector('form')
 const inputWeight = document.querySelector('#weight')
 const inputHeight = document.querySelector('#height')
 
-/* const modalWrapper = document.querySelector('.modal-wrapper')
-const modalMessage = document.querySelector('.modal .title span')
-const modalBtnClose = document.querySelector('.modal button.close') */
-
 form.onsubmit = function(event) {
     event.preventDefault()
 
@@ -17,7 +13,6 @@ form.onsubmit = function(event) {
     const height = inputHeight.value
 
     const showAlertError = notNumber(weight) || notNumber(height)
-    //se um dos 2 nao for numero retorna true.
 
     if(showAlertError){
         AlertError.open()
@@ -32,3 +27,4 @@ function displayResultMessage(result) {
     Modal.message.innerText = `Seu IMC é de ${result}`
     Modal.open()
 }
+form.oninput = () => AlertError.close()
